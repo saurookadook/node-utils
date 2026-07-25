@@ -1,0 +1,79 @@
+{
+    "name": "@saurookkadookk/node-utils",
+    "version": "0.0.0",
+    "engines": {
+        "node": ">=22.10.0",
+        "pnpm": ">=11.8.0"
+    },
+    "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72",
+    "publishConfig": {
+        "access": "public"
+    },
+    "type": "module",
+    "types": "dist/esm/main.d.ts",
+    "browser": "dist/esm/main.js",
+    "module": "dist/esm/main.js",
+    "main": "dist/commonjs/main.cjs",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/esm/main.d.ts",
+                "default": "./dist/esm/main.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/main.d.cts",
+                "default": "./dist/commonjs/main.cjs"
+            }
+        },
+        "./collections": {
+            "import": {
+                "types": "./dist/esm/collections/main.d.ts",
+                "default": "./dist/esm/collections/main.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/collections/main.d.cts",
+                "default": "./dist/commonjs/collections/main.cjs"
+            }
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist",
+        "src",
+        "./package.json"
+    ],
+    "scripts": {
+        "adduser:priv": "npm adduser --auth-type=legacy --registry=https://artifactory.somewhere.com/artifactory/api/npm/npm-virtual/",
+        "login:priv": "npm login --auth-type=legacy --registry=https://artifactory.somewhere.com/artifactory/api/npm/npm-virtual/",
+        "build": "rimraf dist && tsup --tsconfig tsconfig.build.json",
+        "pkg:prepublish": "pnpm build",
+        "pkg:publish": "pnpm publish --no-git-checks",
+        "pack:local": "pnpm pack --out ./build/%s.tgz",
+        "pack:release": "pnpm pack --out ./build/%s-v%v.tgz",
+        "lint": "eslint --cache --ext .ts ./src",
+        "format": "prettier --write --cache --parser --typescript \"./src/**/*.ts\"",
+        "test": "vitest --watch=false",
+        "test:w": "vitest --watchAll",
+        "test:cov": "vitest --watch=false --coverage"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^26.1.1",
+        "@typescript-eslint/eslint-plugin": "^8.65.0",
+        "@vitest/coverage-v8": "^4.1.10",
+        "esbuild": "^0.28.1",
+        "eslint": "^10.7.0",
+        "globals": "^17.7.0",
+        "prettier": "^3.9.6",
+        "rimraf": "^6.1.3",
+        "tsup": "^8.5.1",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.65.0",
+        "vite": "^8.1.5",
+        "vitest": "^4.1.10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/saurookadook/node-utils.git"
+    }
+}

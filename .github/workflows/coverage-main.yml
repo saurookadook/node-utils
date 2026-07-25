@@ -1,0 +1,65 @@
+name: "'node-utils' Test Coverage (main)"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/actions/**"
+      - ".github/workflows/**"
+      - "src/**/*"
+      - ".nvmrc"
+      - "*.js"
+      - "*.json"
+      - "*.ts"
+      - "*.yaml"
+
+jobs:
+  coverage:
+    permissions:
+      contents: write
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 15
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: "Set up Node version and dependencies"
+        uses: ./.github/actions/package-setup
+
+      - name: "🖊️ Run tests"
+        run: pnpm test:cov
+
+      - name: "📊 Report Coverage"
+        uses: davelosert/vitest-coverage-report-action@v2
+        # Ensure the report always runs even if tests fail
+        if: always()
+        with:
+          json-summary-path: ./coverage/coverage-summary.json
+
+      - name: "Mark runners as safe for Git operations"
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: "💥 Delete 'ci-badges' branch"
+        run: |
+          git push origin --delete ci-badges || echo "Branch 'ci-badges' does not exist, skipping deletion"
+
+      - name: "🏷️ Create 'ci-badges' branch"
+        run: |
+          git checkout -b ci-badges
+
+      - name: "⚙️ Generating Coverage Baddges"
+        uses: jpb06/coverage-badges-action@v1.4.10
+        with:
+          badges-icon: vitest
+          badges-labels-prefix: "Test Coverage: "
+          branches: main
+          coverage-summary-path: coverage/coverage-summary.json
+          target-branch: ci-badges
+
+      - name: "⬆️ Push 'ci-badges' branch"
+        run: git push origin ci-badges

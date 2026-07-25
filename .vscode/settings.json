@@ -1,0 +1,102 @@
+{
+    // ------ General
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnType": false, // required
+    "editor.formatOnPaste": false, // optional
+    "editor.formatOnSave": true, // optional
+    "editor.formatOnSaveMode": "file", // required to format on save
+    // "files.autoSave": "onFocusChange", // optional but recommended
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.cache": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+    },
+    "search.exclude": {
+        "**/.cache": true,
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/*.js.map": true,
+        "**/*.css.map": true,
+        "**/*.min.js": true,
+    },
+    // ------ JS/TS
+    "eslint.validate": [
+        "html",
+        "vue",
+        // "markdown",
+        // "mdx",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+    ],
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    // "path-intellisense.mappings": {
+    //     "@": "src"
+    // },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    // "prettier.requireConfig": true,
+    // "prettier.resolveGlobalModules": true,
+    // "prettier.configPath": "./frontend/.prettierrc.js",
+    // ------ CSS
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[scss]": {
+        "editor.tabSize": 2
+    },
+    // ------ Configs
+    "[github-actions-workflow]": {
+        "editor.tabSize": 2
+    },
+    // ------ JSON
+    "json.schemaDownload.trustedDomains": {
+        "https://schemastore.azurewebsites.net/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://www.schemastore.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://json-schema.org/": true,
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://railway.com/railway.schema.json": true
+    },
+    "[yaml]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.eol": "\n"
+    },
+    "[yml]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.eol": "\n"
+    },
+    // ------ Bash
+    "[shellscript]": {
+        "editor.tabSize": 2,
+        "files.eol": "\n"
+    }
+}

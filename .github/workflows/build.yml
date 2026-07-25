@@ -1,0 +1,20 @@
+name: "'node-utils' Build (PRs)"
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 15
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: "Set up Node version and dependencies"
+        uses: ./.github/actions/package-setup
+
+      - name: "Build"
+        run: pnpm build

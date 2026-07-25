@@ -1,0 +1,31 @@
+name: "'node-utils' Build (main)"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/actions/**"
+      - ".github/workflows/**"
+      - "src/**/*"
+      - ".nvmrc"
+      - "*.js"
+      - "*.json"
+      - "*.ts"
+      - "*.yaml"
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 15
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: "Set up Node version and dependencies"
+        uses: ./.github/actions/package-setup
+
+      - name: "Build"
+        run: pnpm build

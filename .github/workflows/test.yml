@@ -1,0 +1,30 @@
+name: "'node-utils' Test (PRs)"
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 15
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: "Set up Node version and dependencies"
+        uses: ./.github/actions/package-setup
+
+      - name: "🖊️ Run tests"
+        run: pnpm test:cov
+
+      - name: "📊 Report Coverage"
+        uses: davelosert/vitest-coverage-report-action@v2
+        # Ensure the report always runs even if tests fail
+        if: always()
+        with:
+          json-summary-path: ./coverage/coverage-summary.json

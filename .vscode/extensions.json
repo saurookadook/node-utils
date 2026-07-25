@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        // Git
+        "codezombiech.gitignore",
+        // "donjayamanne.githistory",
+        // JS/TS
+        "christian-kohler.path-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag",
+        "ms-vscode.vscode-typescript-next",
+        "stylelint.vscode-stylelint",
+        "YoavBls.pretty-ts-errors",
+        // Markdown
+        // "AlanWalk.markdown-navigation",
+        // "yzane.markdown-pdf",
+        "bierner.markdown-mermaid",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        // Utils
+        "Gruntfuggly.todo-tree",
+        "github.vscode-github-actions",
+        "redhat.vscode-yaml"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "ignoreDeprecations": "6.0",
+        "allowImportingTsExtensions": true,
+        "declaration": true,
+        "erasableSyntaxOnly": true,
+        "lib": [
+            "ES2023",
+            "DOM"
+        ],
+        "module": "esnext",
+        "moduleDetection": "force",
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "./dist",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "removeComments": false, /* NOTE: important to ensure documentation comments are preserved in compiled output. */
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "target": "es2023",
+        "types": [
+            "vite/client",
+            "node"
+        ],
+        "verbatimModuleSyntax": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "__mocks__",
+        "**/__mocks__/**/*",
+        "**/__tests__/**/*"
+    ]
+}
