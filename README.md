@@ -6,7 +6,7 @@
 
 [build-badge]: https://github.com/saurookadook/node-utils/actions/workflows/build-main.yml/badge.svg?branch=main&event=push
 [test-badge]: https://github.com/saurookadook/node-utils/actions/workflows/test-main.yml/badge.svg?branch=main&event=push
-[coverage-badge]: https://github.com/saurookadook/node-utils/blog/ci-badges/badges/coverage-total.svg
+[coverage-badge]: https://github.com/saurookadook/node-utils/blob/ci-badges/badges/coverage-total.svg
 
 ## Installation
 
