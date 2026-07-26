@@ -1,4 +1,4 @@
-import type { Nullable } from '@/types/main';
+import type { Nullable } from '../types/main';
 
 interface Opts {
   min?: number;

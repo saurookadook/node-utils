@@ -1,4 +1,4 @@
-import type { KeyedObject } from '@/types/main';
+import type { KeyedObject } from '../types/main';
 
 /**
  * @description Recursively merge source objects into target object.
