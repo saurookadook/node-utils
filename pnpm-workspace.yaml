@@ -1,2 +1,10 @@
 allowBuilds:
   esbuild: true
+
+registries:
+  default: 'https://registry.npmjs.org/'
+
+# NOTE: this error can be ignored - it's some issue with the schema pulled by SchemaStore.
+namedRegistries:
+  npm-private: 'https://artifactory.some-place.com/artifactory/api/npm/npm-private/'
+  public: 'https://registry.npmjs.org/'

@@ -1,4 +1,4 @@
-import type { Nullish } from '@/types/main';
+import type { Nullish } from '../types/main';
 
 export type ErrorCallback = ({
   error,

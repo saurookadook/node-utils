@@ -1,6 +1,7 @@
 {
     "extends": "./tsconfig.common.json",
     "compilerOptions": {
+        "ignoreDeprecations": "6.0",
         "types": [
             "vite/client",
             "node",
@@ -9,6 +10,7 @@
     },
     "include": [
         "src",
+        "src/types/**/*.d.ts",
         "tsup.config.ts",
         "vite.config.ts",
         "vitest.setup.ts"
