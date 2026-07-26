@@ -35,6 +35,16 @@
                 "default": "./dist/commonjs/collections/main.cjs"
             }
         },
+        "./comms": {
+            "import": {
+                "types": "./dist/esm/comms/main.d.ts",
+                "default": "./dist/esm/comms/main.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/comms/main.d.cts",
+                "default": "./dist/commonjs/comms/main.cjs"
+            }
+        },
         "./package.json": "./package.json"
     },
     "files": [
