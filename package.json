@@ -87,6 +87,16 @@
                 "default": "./dist/commonjs/numbers/index.cjs"
             }
         },
+        "./parsers": {
+            "import": {
+                "types": "./dist/esm/parsers/index.d.ts",
+                "default": "./dist/esm/parsers/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/parsers/index.d.cts",
+                "default": "./dist/commonjs/parsers/index.cjs"
+            }
+        },
         "./package.json": "./package.json"
     },
     "publishConfig": {
