@@ -8,6 +8,7 @@ const sharedConfig = {
   entry: [
     './src/collections/index.ts',
     './src/comms/index.ts',
+    './src/numbers/index.ts',
     './src/main.ts', // force formatting
   ],
   /**
