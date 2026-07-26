@@ -1,34 +1,11 @@
 {
+    "extends": "./tsconfig.common.json",
     "compilerOptions": {
-        "ignoreDeprecations": "6.0",
-        "allowArbitraryExtensions": true,
-        "declaration": true,
-        "erasableSyntaxOnly": true,
-        "lib": [
-            "ES2023",
-            "DOM"
-        ],
-        "module": "esnext",
-        "moduleDetection": "force",
-        "moduleResolution": "bundler",
-        "noEmit": true,
-        "noFallthroughCasesInSwitch": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "outDir": "./dist",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        },
-        "removeComments": false, /* NOTE: important to ensure documentation comments are preserved in compiled output. */
-        "skipLibCheck": true,
-        "target": "es2023",
         "types": [
             "vite/client",
-            "node"
+            "node",
+            "vitest"
         ],
-        "verbatimModuleSyntax": true
     },
     "include": [
         "src",

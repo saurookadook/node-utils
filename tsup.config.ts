@@ -2,10 +2,12 @@ import { defineConfig, type Options } from 'tsup';
 import type { BuildOptions } from 'esbuild';
 
 const sharedConfig = {
+  bundle: true,
   clean: true,
   dts: true, // Generate declaration files (.d.ts)
   entry: [
     './src/collections/index.ts',
+    './src/comms/index.ts',
     './src/main.ts', // force formatting
   ],
   /**
