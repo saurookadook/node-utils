@@ -7,7 +7,7 @@ export type KeyedObject<
 
 export type Nullable<T> = T | null;
 
-export type Nullable<T> = Nullable<T> | undefined;
+export type Nullish<T> = Nullable<T> | undefined;
 
 export type ValueOf<T> = T[keyof T];
 
