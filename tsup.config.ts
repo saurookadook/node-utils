@@ -11,6 +11,7 @@ const sharedConfig = {
     './src/numbers/index.ts',
     './src/parsers/index.ts',
     './src/strings/index.ts',
+    './src/styling/index.ts',
     './src/type-guards/index.ts',
     './src/main.ts', // force formatting
   ],
