@@ -107,6 +107,16 @@
                 "default": "./dist/commonjs/strings/index.cjs"
             }
         },
+        "./type-guards": {
+            "import": {
+                "types": "./dist/esm/type-guards/index.d.ts",
+                "default": "./dist/esm/type-guards/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/type-guards/index.d.cts",
+                "default": "./dist/commonjs/type-guards/index.cjs"
+            }
+        },
         "./package.json": "./package.json"
     },
     "publishConfig": {
