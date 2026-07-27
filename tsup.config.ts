@@ -10,6 +10,7 @@ const sharedConfig = {
     './src/comms/index.ts',
     './src/numbers/index.ts',
     './src/parsers/index.ts',
+    './src/strings/index.ts',
     './src/main.ts', // force formatting
   ],
   /**
