@@ -107,6 +107,16 @@
                 "default": "./dist/commonjs/strings/index.cjs"
             }
         },
+        "./styling": {
+            "import": {
+                "types": "./dist/esm/styling/index.d.ts",
+                "default": "./dist/esm/styling/index.js"
+            },
+            "require": {
+                "types": "./dist/commonjs/styling/index.d.cts",
+                "default": "./dist/commonjs/styling/index.cjs"
+            }
+        },
         "./type-guards": {
             "import": {
                 "types": "./dist/esm/type-guards/index.d.ts",
