@@ -11,7 +11,7 @@
 ## Installation
 
 ```bash
-pnpm add node-utils
+pnpm add @saurookkadookk/node-utils
 ```
 
 ---
